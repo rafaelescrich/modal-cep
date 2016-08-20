@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Modal CEP</title>
+    
+    <link rel="stylesheet" href="css/estilo.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.maskedinput-1.1.4.pack.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <h1>Exemplo</h1>
+    
+    <!-- Modal -->
+    <div class="modal fade form-group" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div style="padding:10px;" class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title text-center" id="myModalLabel"><strong>Verifique se seu endereço está na área de abrangência da nossa entrega</strong></h3>
+          </div>
+          <div style="padding:40px;" class="modal-body text-center">
+            <input id="cep" style="width:300px;font-size:40px;text-align:center;" placeholder="Digite seu CEP" pattern="[0-9]*" type="text" required="">
+          </div>
+          <div class="modal-footer text-center">
+            <button class="flat-butt" onclick="verificaCEP()">Verificar</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- fecha modal -->
+
+ </body>
+</html>
