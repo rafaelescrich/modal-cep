@@ -22,17 +22,19 @@
     <div class="modal fade form-group" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-          <div style="padding:10px;" class="modal-header">
+          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h3 class="modal-title text-center" id="myModalLabel"><strong>Verifique se seu endereço está na área de abrangência da nossa entrega</strong></h3>
+            <h3>Faça seu pedido</h3>
+            <h4>Digite seu CEP para encontrar o <strong>Manekineko</strong> mais<h4>
+            <h4>próximo de você!<h4>
           </div>
-          <div style="padding:40px;" class="modal-body text-center">
+          <div class="modal-body">
             <input id="cep" style="width:300px;font-size:40px;text-align:center;" placeholder="Digite seu CEP" pattern="[0-9]*" type="text" required="">
           </div>
           <div class="modal-footer text-center">
-            <button class="flat-butt" onclick="verificaCEP()">Verificar</button>
+            <button class="flat-butt" onclick="verificaCEP()"><i class="fa fa-search" aria-hidden="true"></i> Buscar restaurantes</button>
           </div>
         </div>
       </div>
