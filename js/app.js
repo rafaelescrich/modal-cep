@@ -1,22 +1,20 @@
 $(document).ready(function() {
     
-    $('#myModal').modal('show');
+    $('#modalCEP').modal({keyboard: true});
+    $('#modalCEP').modal('show');
 	$("#cep").mask("99999-999");
 });
 
 function verificaCEP() {
-
-	buscaCEP(arrayCEP, document.getElementById("cep").value) ? alert('Dentro da nossa área de cobertura') : alert('Fora da área de entrega');
+	buscaCEP(arrayCEP, document.getElementById("cep").value) ? mostraModalResposta("entrega") : mostraModalResposta("naoEntrega");
 };
 
 function buscaCEP(arrayCEP, cep) {
-	console.log(cep);
 	var cepLimpo = cep.replace(/-/g, "");
-	console.log(cepLimpo);
 	var entregavel = false;
 	for (var i = 0; i < arrayCEP.length; i++) {
 		if(arrayCEP[i]==cepLimpo) {
-		    entregavel = true;
+		  entregavel = true;
 		    break;
 		} else {
 		  entregavel = false;
@@ -25,22 +23,17 @@ function buscaCEP(arrayCEP, cep) {
 	return entregavel;
 };
 
-function ajaxCarrinho() {
-	var http = new XMLHttpRequest();
-	var url = "get_data.php";
-	var params = "lorem=ipsum&name=binny";
-	http.open("POST", url, true);
-
-	//Send the proper header information along with the request
-	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-	http.onreadystatechange = function() {//Call a function when the state changes.
-	    if(http.readyState == 4 && http.status == 200) {
-	        alert(http.responseText);
-	    }
-	}
-	http.send(params);
-
+function mostraModalResposta(tipoModal) {
+    if (tipoModal == "entrega") {
+        $('#modalCEP').modal('hide');
+        $('#modalResposta').modal('show');
+        $('#entrega').show();
+    }
+    if (tipoModal == "naoEntrega") {
+        $('#modalCEP').modal('hide');
+        $('#modalResposta').modal('show');
+        $('#naoEntrega').show();
+    }
 };
 
 var arrayCEP = [
@@ -57,7 +50,7 @@ var arrayCEP = [
     22290903, 22290904, 22290905, 22290906, 22460020, 22460030, 22460035, 22460036, 22460040, 22460050, 22460060, 22460070, 22460080, 22460090, 22460100,
     22460110, 22460120, 22460130, 22460140, 22460170, 22460180, 22460190, 22460200, 22460210, 22460220, 22460230, 22460240, 22460250, 22460260, 22460280,
     22460290, 22460300, 22460310, 22460320, 22460900, 22460901, 22460902, 22460903, 22460904, 22460905, 22461000, 22461010, 22461020, 22461030, 22461040,
-    22461050, 22461060, 22461070, 22461080, 22461090, 22461100, 22461110, 22461120, 22461130, 22461140, 22461151, 22461152, 22461160, 22461-70, 22461190,
+    22461050, 22461060, 22461070, 22461080, 22461090, 22461100, 22461110, 22461120, 22461130, 22461140, 22461151, 22461152, 22461160, 22461070, 22461190,
     22461200, 22461210, 22461230, 22461240, 22461250, 22461260, 22010000, 22011001, 22011002, 22011010, 22011020, 22011030, 22011040, 22011050, 22011060,
     22011080, 22011090, 22011100, 22011900, 22011901, 22020001, 22020002, 22020010, 22020020, 22020030, 22020040, 22020050, 22020060, 22020070, 22021000,
     22021001, 22021010, 22021020, 22021030, 22021040, 22021050, 22061900, 22070000, 22070001, 22070002, 22210030, 22210040, 22210050, 22210060, 22210065,
