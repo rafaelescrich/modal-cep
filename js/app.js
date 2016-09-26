@@ -1,41 +1,4 @@
-jQuery(function($){
-	$(document).ready(function() {
-	    $('#modalCEP').modal({keyboard: true});
-	    $('#modalCEP').modal('show');
-		$("#cep").mask("99999-999");
-	});
-	
-	function verificaCEP() {
-		buscaCEP(arrayCEP, document.getElementById("cep").value) ? mostraModalResposta("entrega") : mostraModalResposta("naoEntrega");
-	};
-	
-	function buscaCEP(arrayCEP, cep) {
-		var cepLimpo = cep.replace(/-/g, "");
-		var entregavel = false;
-		for (var i = 0; i < arrayCEP.length; i++) {
-			if(arrayCEP[i]==cepLimpo) {
-			  entregavel = true;
-			    break;
-			} else {
-			  entregavel = false;
-			}
-		}
-		return entregavel;
-	};
-	
-	function mostraModalResposta(tipoModal) {
-	    if (tipoModal == "entrega") {
-	        $('#modalCEP').modal('hide');
-	        $('#modalResposta').modal('show');
-	        $('#entrega').show();
-	    }
-	    if (tipoModal == "naoEntrega") {
-	        $('#modalCEP').modal('hide');
-	        $('#modalResposta').modal('show');
-	        $('#naoEntrega').show();
-	    }
-	};
-	
+(function($){
 	var arrayCEP = [
 	    22230090, 22231010, 22231020, 22231030, 22231040,  22231050, 22231060, 22250000, 22250010, 22250040, 22250140, 22250145, 22250150,
 	    22250160, 22250170, 22250180, 22250190, 22250200, 22250210, 22250900, 22250901, 22250904, 22250905, 22250906, 22250907, 22250908, 22250909,
@@ -137,4 +100,43 @@ jQuery(function($){
 	    22420008, 22420010, 22420012, 22420020, 22420030, 22420040, 22420041, 22420042, 22420043, 22421000, 22421010, 22421020, 22421022, 22421023, 22421024,
 	    22421025, 22421026, 22421027, 22421028, 22421029, 22421030, 22430000, 22430010, 22430020
 	    ];
-});
+
+
+	$(document).ready(function() {
+	    $('#modalCEP').modal({keyboard: true});
+	    $('#modalCEP').modal('show');
+		$("#cep").mask("99999-999");
+	});
+	
+	$.fn.verificaCEP = function() {
+		$.fn.buscaCEP(arrayCEP, document.getElementById("cep").value) ? $.fn.mostraModalResposta("entrega") : $.fn.mostraModalResposta("naoEntrega");
+	};
+	
+	$.fn.buscaCEP = function(arrayCEP, cep) {
+		var cepLimpo = cep.replace(/-/g, "");
+		var entregavel = false;
+		for (var i = 0; i < arrayCEP.length; i++) {
+			if(arrayCEP[i]==cepLimpo) {
+			  entregavel = true;
+			    break;
+			} else {
+			  entregavel = false;
+			}
+		}
+		return entregavel;
+	};
+	
+	$.fn.mostraModalResposta = function(tipoModal) {
+	    if (tipoModal == "entrega") {
+	        $('#modalCEP').modal('hide');
+	        $('#modalResposta').modal('show');
+	        $('#entrega').show();
+	    }
+	    if (tipoModal == "naoEntrega") {
+	        $('#modalCEP').modal('hide');
+	        $('#modalResposta').modal('show');
+	        $('#naoEntrega').show();
+	    }
+	};
+
+})(jQuery);

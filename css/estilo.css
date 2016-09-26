@@ -1,4 +1,4 @@
-body {
+.modal {
   font-family: 'Roboto', sans-serif !important;
 }
 .entrega {
@@ -24,7 +24,7 @@ body {
 }
 .modal-header {
   color: white;
-  background-color: #E8854E;
+  background-color: #ff8649;
   padding: 10px !important;
   border-bottom: 0px !important;
   font-size: 30px !important;
