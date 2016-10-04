@@ -1,4 +1,6 @@
-jQuery(function($){            
+jQuery(function($){
+	var localEntrega;
+
     var arrayCEP = [
 	    22230090, 22231010, 22231020, 22231030, 22231040,  22231050, 22231060, 22250000, 22250010, 22250040, 22250140, 22250145, 22250150,
 	    22250160, 22250170, 22250180, 22250190, 22250200, 22250210, 22250900, 22250901, 22250904, 22250905, 22250906, 22250907, 22250908, 22250909,
@@ -109,14 +111,28 @@ jQuery(function($){
 	});
 	
 	$.fn.verificaCEP = function() {
-		$.fn.buscaCEP(arrayCEP, document.getElementById("cep").value) ? $.fn.mostraModalResposta("entrega") : $.fn.mostraModalResposta("naoEntrega");
+		$.fn.buscaCEP(document.getElementById("cep").value) ? $.fn.mostraModalResposta("entrega") : $.fn.mostraModalResposta("naoEntrega");
 	};
 	
-	$.fn.buscaCEP = function(arrayCEP, cep) {
+	$.fn.buscaCEP = function(cep) {
 		var cepLimpo = cep.replace(/-/g, "");
+		cepLimpo = parseInt(cepLimpo);
 		var entregavel = false;
 		for (var i = 0; i < arrayCEP.length; i++) {
 			if(arrayCEP[i]==cepLimpo) {
+				if(cepLimpo >= 22260160 && cepLimpo <= 22271080) {
+					localEntrega = 'Humaitá';
+				} else if (cepLimpo >= 22230090 && cepLimpo <= 22290906) {
+					localEntrega = 'Botafogo';
+				} else if (cepLimpo >= 22460020 && cepLimpo <= 22461260) {
+					localEntrega = 'Jardim Botânico';
+				} else if (cepLimpo >= 22010000 && cepLimpo <= 22070002) {
+					localEntrega = 'Copacabana';
+				} else if (cepLimpo >= 22210030 && cepLimpo <= 22250903) {
+					localEntrega = 'Flamengo';
+				} else if (cepLimpo >= 22221070 && cepLimpo <= 22245150) {
+					localEntrega = 'Laranjeiras';
+				}
 			  entregavel = true;
 			    break;
 			} else {
@@ -128,6 +144,7 @@ jQuery(function($){
 	
 	$.fn.mostraModalResposta = function(tipoModal) {
 	    if (tipoModal == "entrega") {
+	    	document.getElementById("localEntrega").innerHTML = localEntrega;
 	        $('#modalCEP').modal('hide');
 	        $('#modalResposta').modal('show');
 	        $('#entrega').show();
