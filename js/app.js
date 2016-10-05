@@ -1,4 +1,8 @@
 jQuery(function($){
+
+	$.fn.mask = jQuery.fn.mask;
+	$.fn.modal = jQuery.fn.modal;
+
 	var localEntrega;
 
     var arrayCEP = [
@@ -103,10 +107,9 @@ jQuery(function($){
 	    22421025, 22421026, 22421027, 22421028, 22421029, 22421030, 22430000, 22430010, 22430020
 	    ];
 
-
 	$(document).ready(function() {
-	    $('#modalCEP').modal({keyboard: true});
-	    $('#modalCEP').modal('show');
+	    $("#modalCEP").modal({keyboard: true});
+	    $("#modalCEP").modal("show");
 		$("#cep").mask("99999-999");
 	});
 	
@@ -121,17 +124,17 @@ jQuery(function($){
 		for (var i = 0; i < arrayCEP.length; i++) {
 			if(arrayCEP[i]==cepLimpo) {
 				if(cepLimpo >= 22260160 && cepLimpo <= 22271080) {
-					localEntrega = 'Humaitá';
+					localEntrega = "Humaitá";
 				} else if (cepLimpo >= 22230090 && cepLimpo <= 22290906) {
-					localEntrega = 'Botafogo';
+					localEntrega = "Botafogo";
 				} else if (cepLimpo >= 22460020 && cepLimpo <= 22461260) {
-					localEntrega = 'Jardim Botânico';
+					localEntrega = "Jardim Botânico";
 				} else if (cepLimpo >= 22010000 && cepLimpo <= 22070002) {
-					localEntrega = 'Copacabana';
+					localEntrega = "Copacabana";
 				} else if (cepLimpo >= 22210030 && cepLimpo <= 22250903) {
-					localEntrega = 'Flamengo';
+					localEntrega = "Flamengo";
 				} else if (cepLimpo >= 22221070 && cepLimpo <= 22245150) {
-					localEntrega = 'Laranjeiras';
+					localEntrega = "Laranjeiras";
 				}
 			  entregavel = true;
 			    break;
@@ -145,14 +148,14 @@ jQuery(function($){
 	$.fn.mostraModalResposta = function(tipoModal) {
 	    if (tipoModal == "entrega") {
 	    	document.getElementById("localEntrega").innerHTML = localEntrega;
-	        $('#modalCEP').modal('hide');
-	        $('#modalResposta').modal('show');
-	        $('#entrega').show();
+	        $("#modalCEP").modal("hide");
+	        $("#modalResposta").modal("show");
+	        $("#entrega").show();
 	    }
 	    if (tipoModal == "naoEntrega") {
-	        $('#modalCEP').modal('hide');
-	        $('#modalResposta').modal('show');
-	        $('#naoEntrega').show();
+	        $("#modalCEP").modal("hide");
+	        $("#modalResposta").modal("show");
+	        $("#naoEntrega").show();
 	    }
 	};
        
