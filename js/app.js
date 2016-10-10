@@ -125,16 +125,68 @@ jQuery(function($){
 			if(arrayCEP[i]==cepLimpo) {
 				if(cepLimpo >= 22260160 && cepLimpo <= 22271080) {
 					localEntrega = "Humaitá";
-				} else if (cepLimpo >= 22230090 && cepLimpo <= 22290906) {
-					localEntrega = "Botafogo";
+				} else if (cepLimpo >= 22230090 && cepLimpo <= 22231060) {
+					localEntrega = "Humaitá";
+				} else if (cepLimpo >= 22250000 && cepLimpo <= 22290906) {
+					localEntrega = "Humaitá";
 				} else if (cepLimpo >= 22460020 && cepLimpo <= 22461260) {
-					localEntrega = "Jardim Botânico";
+					localEntrega = "Humaitá";
 				} else if (cepLimpo >= 22010000 && cepLimpo <= 22070002) {
-					localEntrega = "Copacabana";
-				} else if (cepLimpo >= 22210030 && cepLimpo <= 22250903) {
-					localEntrega = "Flamengo";
+					localEntrega = "Humaitá";
+				} else if (cepLimpo >= 22210030 && cepLimpo <= 22231150) {
+					localEntrega = "Humaitá";
+				} else if (cepLimpo >= 22250020 && cepLimpo <= 22250903) {
+					localEntrega = "Humaitá";
 				} else if (cepLimpo >= 22221070 && cepLimpo <= 22245150) {
-					localEntrega = "Laranjeiras";
+					localEntrega = "Humaitá";
+				} else if (cepLimpo === 22261070) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo >= 22460000 && cepLimpo <= 22470180) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo === 22071050) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo === 22210000) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo >= 22410100 && cepLimpo <= 22470004) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo >= 22430030 && cepLimpo <= 22431050) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo >= 22431070 && cepLimpo <= 22450210) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo >= 22430150 && cepLimpo <= 22470100) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo === 22610030 || cepLimpo === 22610170 || cepLimpo === 22610320) {
+					localEntrega = "Leblon";
+				} else if (cepLimpo >= 22030000 && cepLimpo <= 22081032) {
+					localEntrega = "Ipanema";
+				} else if (cepLimpo >= 22470010 && cepLimpo <= 22471340) {
+					localEntrega = "Ipanema";
+				} else if (cepLimpo >= 22071110 && cepLimpo <= 22081060) {
+					localEntrega = "Ipanema";
+				} else if (cepLimpo >= 22410000 && cepLimpo <= 22430020) {
+					localEntrega = "Ipanema";
+				} else if (cepLimpo >= 22641002 && cepLimpo <= 22753090) {
+					localEntrega = "Itanhangá";
+				} else if (cepLimpo >= 22611030 && cepLimpo <= 22641005) {
+					localEntrega = "Itanhangá";
+				} else if (cepLimpo >= 22630070 && cepLimpo <= 22795901) {
+					localEntrega = "CasaShopping";
+				} else if (cepLimpo >= 20750000 && cepLimpo <= 20756000) {
+					localEntrega = "NorteShopping";
+				} else if (cepLimpo >= 21050560 && cepLimpo <= 21051900) {
+					localEntrega = "NorteShopping";
+				} else if (cepLimpo >= 20730020 && cepLimpo <= 20756130) {
+					localEntrega = "NorteShopping";
+				} else if (cepLimpo === 21050581 || cepLimpo === 21050582 || cepLimpo === 20770000) {
+					localEntrega = "NorteShopping";
+				} else if (cepLimpo >= 20740310 && cepLimpo <= 20756220) {
+					localEntrega = "NorteShopping";
+				} else if (cepLimpo >= 21380007 && cepLimpo <= 21381470) {
+					localEntrega = "NorteShopping";
+				} else if (cepLimpo >= 20751320 && cepLimpo <= 20771290) {
+					localEntrega = "NorteShopping";
+				} else if (cepLimpo >= 20720090 && cepLimpo <= 20775010) {
+					localEntrega = "NorteShopping";
 				}
 			  entregavel = true;
 			    break;
